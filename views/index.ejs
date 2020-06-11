@@ -1,0 +1,37 @@
+<%- include("header") -%>
+
+<body style="text-align: center" class="p-3 mb-2 bg-light text-dark">
+  <div class="align-items-center">
+    <h1>Hey there, Welcome to Word Counter!</h1>
+    <h3>Write or paste your file Below, to count the Number of Words. </h3>
+  </div>
+
+  <div>
+    <form action="/" method="post">
+
+      <div class="form-group">
+        <label for="wordsInput">Write/Paste words here : </label>
+        <br>
+        <textarea maxlength="300" id="textarea" type="text" name="words"
+          rows="8" cols="80" onkeyup="count_down(this);"></textarea>
+        <br>
+        <label for="">Characters Remaining:</label>
+        <span class="text-muted pull-right" id="count1">300</span>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Go</button>
+    </form>
+
+  </div>
+
+  <script type="text/javascript">
+    var max = 300;
+
+    function count_down(obj) {
+      document.getElementById('count1').innerHTML = 300 - obj.value.length;
+    }
+
+  </script>
+</body>
+
+</html>
